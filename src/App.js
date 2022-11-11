@@ -1,5 +1,5 @@
 import "./App.css";
-import Vectors from "./components/Vectors";
+import Vectors from "./components/Vectors/Vectors";
 function App() {
   return (
     <div className="App">

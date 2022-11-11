@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { arrayData } from "./data";
+import AltitudeSlice from "../AltituteSlice/AltitudeSlice";
+import { arrayData } from "../data";
 //import useFetch from "../hooks/fetchData";
-import FindLocation from "./findLocation/FindLocation";
+import FindLocation from "../findLocation/FindLocation";
+import TopThreeCountries from "../TopThreeCountries/TopThreeCountries";
 const Vectors = () => {
   /* const loadData = () => {
     setIsLoading(true);
@@ -28,15 +30,20 @@ const Vectors = () => {
 
   return (
     <>
-      {/*  <div>
-        {vectors && vectors.map((vector) => <FindLocation array={vector} />)}
-      </div> */}
-
       <div>
-        {arrayData.map((vector) => (
-          <FindLocation array={vector} />
-        ))}
+        <TopThreeCountries arrayData={arrayData} />
       </div>
+      <FindLocation
+        array={arrayData}
+        country={"The Netherland"}
+        latitude1={50.77083}
+        latitude2={53.35917}
+        longtitude1={3.57361}
+        longtitude2={7.10833}
+      />
+      <AltitudeSlice array={arrayData} slicesMin={0} slicesMax={1000} />
+      <AltitudeSlice array={arrayData} slicesMin={1001} slicesMax={2000} />
+      <AltitudeSlice array={arrayData} slicesMin={2001} slicesMax={3000} />
     </>
   );
 };
