@@ -8,7 +8,6 @@ const AltitudeSlice = ({ array, slicesMin, slicesMax }) => {
     )
     .sort((a, b) => a[7] - b[7])
     .map((element) => element[0] + ":" + element[7]);
-  console.log(result);
   return (
     <>
       <h2>
@@ -21,9 +20,9 @@ const AltitudeSlice = ({ array, slicesMin, slicesMax }) => {
           </tr>
         </thead>
         <tbody>
-          {result.map((item) => {
+          {result.map((item, index) => {
             return (
-              <tr>
+              <tr key={index}>
                 <td>{item}</td>
               </tr>
             );
