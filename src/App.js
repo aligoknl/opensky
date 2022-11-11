@@ -1,8 +1,9 @@
 import "./App.css";
+import Vectors from "./components/Vectors";
 function App() {
   return (
     <div className="App">
-      <h1>Hello</h1>
+      <Vectors />
     </div>
   );
 }
